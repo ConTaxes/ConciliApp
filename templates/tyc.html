@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - ConciliApp Beta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .terms-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
+        .section:nth-child(9) { animation-delay: 0.9s; }
+        .section:nth-child(10) { animation-delay: 1.0s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover {
+            color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .subsection {
+            margin-bottom: 20px;
+        }
+
+        .subsection-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .subsection p, .section p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #ff6b6b;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        ul {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        li::marker {
+            color: #667eea;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .contact-info a {
+            color: #ffeaa7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+            background: #f8f9fa;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="terms-card">
+            <div class="header">
+                <h1>Términos y Condiciones</h1>
+                <div class="subtitle">Programa de Acceso Beta - ConciliApp</div>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <div class="section-title">1. Participación en el Programa de Acceso Beta – ConciliApp</div>
+                    
+                    <div class="subsection">
+                        <div class="subsection-title">1.1. Descripción del Servicio</div>
+                        <p>El presente documento establece los términos y condiciones que rigen el acceso y uso del programa de acceso beta de la aplicación ConciliApp (en adelante, la "Aplicación"), propiedad de la empresa ConTaxes (en adelante, "la Empresa", "nosotros" o "nuestro"), ofrecido a través del sitio web oficial de preinscripción: <strong>https://contaxes.github.io/ConciliApp/</strong> o cualquier otro dominio asociado (en adelante, el "Sitio Web").</p>
+                        
+                        <div class="info-box">
+                            <strong>ConciliApp</strong> es una herramienta tecnológica en desarrollo enfocada en automatizar y facilitar procesos de conciliación bancaria y contable, dirigida a contadores, empresas y profesionales del área financiera.
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">1.2. Naturaleza del Programa Beta</div>
+                        <p>Al inscribirse en el formulario de este Sitio Web, usted (el "Usuario" o "Participante") solicita acceso anticipado, limitado y no garantizado al programa beta de ConciliApp. Este programa tiene como finalidad recopilar retroalimentación sobre el desempeño, usabilidad y funcionalidades del software en entornos reales.</p>
+                        
+                        <div class="highlight-box">
+                            <strong>Importante:</strong> La participación en la versión beta se ofrece de forma gratuita, temporal y con carácter experimental, sin garantías de estabilidad, disponibilidad continua ni resultados determinados.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">2. Elegibilidad y Registro</div>
+                    
+                    <div class="subsection">
+                        <div class="subsection-title">2.1. Condiciones de Registro</div>
+                        <p>Para participar en el programa beta, el Usuario debe:</p>
+                        <ul>
+                            <li>Ser mayor de edad según las leyes de su país de residencia</li>
+                            <li>Completar correctamente el formulario de inscripción proporcionado en el Sitio Web</li>
+                            <li>Aceptar expresamente estos Términos y Condiciones</li>
+                            <li>Proporcionar información veraz, actualizada y completa</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">2.2. Selección de Participantes</div>
+                        <p>La Empresa se reserva el derecho exclusivo de seleccionar, rechazar o limitar el acceso de los Usuarios inscritos al programa beta, sin necesidad de justificación y sin que ello genere derecho a compensación alguna.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">3. Uso Permitido y Restricciones</div>
+                    
+                    <div class="subsection">
+                        <div class="subsection-title">3.1. Uso Autorizado</div>
+                        <p>El Usuario acepta utilizar la Aplicación exclusivamente con fines de prueba, evaluación y retroalimentación, sin fines comerciales o de explotación profesional, salvo autorización expresa y por escrito de la Empresa.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">3.2. Prohibiciones</div>
+                        <div class="highlight-box">
+                            <p><strong>Queda expresamente prohibido al Usuario:</strong></p>
+                            <ul>
+                                <li>Modificar, descompilar, realizar ingeniería inversa o intentar acceder al código fuente</li>
+                                <li>Utilizar la Aplicación para actividades ilegales, fraudulentas o no autorizadas</li>
+                                <li>Compartir acceso, credenciales o información confidencial con terceros</li>
+                                <li>Publicar o divulgar información sobre el funcionamiento de la beta sin consentimiento previo de la Empresa (incluyendo videos, capturas, reseñas o análisis técnicos)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">4. Propiedad Intelectual</div>
+                    <p>Todos los derechos de propiedad intelectual sobre la Aplicación, el Sitio Web y cualquier contenido asociado son y seguirán siendo propiedad exclusiva de ConTaxes, incluyendo pero no limitado a códigos, interfaces, nombres comerciales, logotipos, diseños, funcionalidades y documentación.</p>
+                    <p>El Usuario no adquiere ningún derecho de propiedad ni licencia sobre la Aplicación por el simple hecho de participar en el programa beta.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">5. Privacidad y Tratamiento de Datos</div>
+                    
+                    <div class="subsection">
+                        <div class="subsection-title">5.1. Datos Recopilados</div>
+                        <p>Durante el proceso de inscripción y uso de la beta, la Empresa podrá recopilar datos personales como nombre, correo electrónico, perfil profesional, ubicación, así como información técnica sobre el uso de la Aplicación.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">5.2. Finalidad del Tratamiento</div>
+                        <p>Los datos serán tratados con las siguientes finalidades:</p>
+                        <ul>
+                            <li>Gestionar el acceso al programa beta</li>
+                            <li>Realizar análisis técnicos y mejoras del producto</li>
+                            <li>Contactar al Usuario para obtener retroalimentación o enviar notificaciones relacionadas con ConciliApp</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">5.3. Almacenamiento y Seguridad</div>
+                        <p>La Empresa implementa medidas técnicas y organizativas razonables para proteger los datos personales del Usuario, de conformidad con las normativas internacionales vigentes, incluyendo el Reglamento General de Protección de Datos (GDPR) y la Ley de Privacidad del Consumidor de California (CCPA), cuando aplique.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">5.4. Derechos del Usuario</div>
+                        <div class="contact-info">
+                            El Usuario podrá ejercer sus derechos de acceso, rectificación, cancelación, oposición y portabilidad de datos escribiendo a: <a href="mailto:contaxesinfo@gmail.com">contaxesinfo@gmail.com</a> o mediante los mecanismos establecidos en la Política de Privacidad.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">6. Limitación de Responsabilidad</div>
+                    <div class="highlight-box">
+                        <p><strong>El Usuario reconoce y acepta que la versión beta de ConciliApp:</strong></p>
+                        <ul>
+                            <li>Puede contener errores, fallas de rendimiento, interrupciones o pérdidas de información</li>
+                            <li>Se entrega "tal cual", sin garantías de ningún tipo, expresas ni implícitas</li>
+                            <li>No está destinada para uso en entornos productivos o de misión crítica</li>
+                        </ul>
+                        <p>La Empresa no será responsable por daños directos, indirectos, incidentales o consecuentes que surjan del uso o imposibilidad de uso de la Aplicación beta.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">7. Confidencialidad</div>
+                    <p>Toda información técnica, funcional o estratégica relacionada con ConciliApp a la que el Usuario tenga acceso durante el periodo de prueba será considerada confidencial, y el Usuario se compromete a no divulgarla, reproducirla o compartirla sin autorización escrita por parte de ConTaxes.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">8. Modificaciones y Terminación</div>
+                    <p><strong>La Empresa se reserva el derecho de:</strong></p>
+                    <ul>
+                        <li>Modificar en cualquier momento los presentes Términos y Condiciones</li>
+                        <li>Finalizar, suspender o limitar el programa beta sin previo aviso</li>
+                    </ul>
+                    <p>El Usuario podrá retirarse del programa beta en cualquier momento notificando a la Empresa. Sin embargo, no tendrá derecho a reclamar compensaciones ni indemnizaciones.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">9. Ley Aplicable y Jurisdicción</div>
+                    <p>Estos Términos y Condiciones se rigen por las leyes de la República de Colombia, sin perjuicio del cumplimiento de normas internacionales de protección al consumidor y protección de datos, cuando aplique.</p>
+                    <p>Cualquier disputa relacionada con estos términos será sometida a los tribunales competentes de la ciudad de Bogotá D.C., Colombia, salvo que la ley disponga otra jurisdicción imperativa.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">10. Aceptación</div>
+                    <div class="info-box">
+                        <p><strong>Al hacer clic en el botón "Inscribirme a la Beta" o equivalente, el Usuario declara que ha leído, entendido y aceptado íntegramente los presentes Términos y Condiciones.</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>&copy;ConciliApp © 2025 · ConTaxes · Todos los derechos reservados.</p>
+                <p>Para consultas o soporte: <a href="mailto:contaxesinfo@gmail.com">contaxesinfo@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-indicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
