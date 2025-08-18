@@ -30,6 +30,14 @@
       transform: translateY(-5px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); }
+      50% { box-shadow: 0 0 30px rgba(34, 197, 94, 0.6); }
+    }
+    .whatsapp-banner {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -43,7 +51,7 @@
         <img src="static/Logo.png" width="200px" alt="">
       </div>
       <a href="#formulario" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-        Acceso Exclusivo
+        Únete a la Lista
       </a>
     </div>
   </header>
@@ -53,6 +61,9 @@
     <div class="absolute inset-0 bg-black opacity-10"></div>
     <div class="max-w-5xl mx-auto text-center relative z-10">
       <div class="fade-in-up">
+        <div class="inline-block bg-white bg-opacity-20 backdrop-blur-sm px-6 py-2 rounded-full border border-white border-opacity-30 shadow-lg mb-6">
+          <span class="font-bold text-yellow-300 text-lg">🚀 PRÓXIMO LANZAMIENTO</span>
+        </div>
         <h2 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
           Automatiza el <span class="text-yellow-300">80%</span> de tus 
           <br>conciliaciones bancarias
@@ -65,7 +76,7 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <a href="#formulario" class="bg-green-500 hover:bg-green-400 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
-            🚀 Solicita Acceso Beta Gratis
+            📋 Únete a la Lista de Espera
           </a>
           <button onclick="document.getElementById('demo-video').scrollIntoView()" class="text-white border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
             👀 Ver Demo
@@ -115,7 +126,73 @@
         </div>
         <div class="card-hover">
           <div class="text-3xl font-bold text-orange-600 mb-2">100%</div>
-          <div class="text-gray-600">compatible con PDF bancario</div>
+          <div class="text-gray-600">compatible con PDFs bancarios</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compatibilidad Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+        Compatibilidad Completa
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Bancos -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-lg">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl text-white">🏦</span>
+            </div>
+            <h4 class="font-bold text-2xl text-gray-800">Bancos Compatibles</h4>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="font-semibold">Bancolombia</span>
+              <span class="text-sm text-gray-500">(PDF + Excel)</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="font-semibold">Davivienda</span>
+              <span class="text-sm text-gray-500">(PDF + Excel)</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="font-semibold">Otros Bancos</span>
+              <span class="text-sm text-gray-500">(Plantilla Excel)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sistemas Contables -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl shadow-lg">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl text-white">💻</span>
+            </div>
+            <h4 class="font-bold text-2xl text-gray-800">Sistemas Contables</h4>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="font-semibold">Siigo Nube</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="font-semibold">Alegra</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="font-semibold">World Office</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="font-semibold">Plantilla Universal</span>
+              <span class="text-sm text-gray-500">(Excel)</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -135,7 +212,7 @@
           <h4 class="font-bold text-xl mb-4 text-gray-800">PDF directo, sin convertir</h4>
           <p class="text-gray-600 leading-relaxed">
             Extrae datos automáticamente desde cualquier PDF bancario colombiano. 
-            <strong>Bancolombia, Davivienda</strong> y proximamente más. Olvídate de convertir a Excel.
+            <strong>Bancolombia, Davivienda</strong> y plantilla para otros bancos. Olvídate de convertir a Excel.
           </p>
         </div>
         <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-center">
@@ -186,7 +263,7 @@
   <section class="bg-gray-50 py-16 px-6">
     <div class="max-w-6xl mx-auto">
       <h3 class="text-3xl font-bold mb-12 text-center text-gray-800">
-        Contadores ya están ahorrando horas
+        Contadores ya están esperando ConciliApp
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
@@ -198,8 +275,8 @@
             </div>
           </div>
           <p class="text-gray-700 leading-relaxed italic">
-            "Antes duraba <strong>medio día</strong> conciliando... ahora lo hago en 20 minutos. 
-            Es como tener un asistente súper inteligente."
+            "Vi el demo y me emocioné mucho. Actualmente <strong>demoro medio día</strong> conciliando... 
+            ¡No puedo esperar a que salga!"
           </p>
           <div class="flex text-yellow-400 mt-4">
             ⭐⭐⭐⭐⭐
@@ -215,7 +292,7 @@
             </div>
           </div>
           <p class="text-gray-700 leading-relaxed italic">
-            "Funciona directo con los PDFs de <strong>Bancolombia</strong>. 
+            "Que funcione directo con los PDFs de <strong>Bancolombia</strong> es increíble. 
             ¡Al fin una solución hecha por alguien que entiende nuestro trabajo!"
           </p>
           <div class="flex text-yellow-400 mt-4">
@@ -232,12 +309,39 @@
             </div>
           </div>
           <p class="text-gray-700 leading-relaxed italic">
-            "Mi equipo ahora puede enfocarse en análisis en lugar de 
-            <strong>copiar y pegar</strong> datos. Brutal la diferencia."
+            "Ya me uní al grupo de WhatsApp. Mi equipo podrá enfocarse en análisis en lugar de 
+            <strong>copiar y pegar</strong> datos. ¡Esperamos el lanzamiento!"
           </p>
           <div class="flex text-yellow-400 mt-4">
             ⭐⭐⭐⭐⭐
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner WhatsApp -->
+  <section class="bg-gradient-to-r from-green-500 to-emerald-600 py-8 px-6 relative overflow-hidden whatsapp-banner">
+    <div class="absolute inset-0 bg-black opacity-10"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+        <div class="flex-1 text-white">
+          <h3 class="text-2xl font-bold mb-2">
+            💬 Únete al Grupo Exclusivo de WhatsApp
+          </h3>
+          <p class="text-green-100 text-lg">
+            Recibe actualizaciones del desarrollo, tips de conciliación y acceso prioritario al lanzamiento
+          </p>
+        </div>
+        <div class="flex-shrink-0">
+          <a href="https://wa.me/+573027892044?text=Hola,%20quiero%20unirme%20al%20grupo%20de%20ConciliApp" 
+             target="_blank"
+             class="bg-white text-green-600 hover:bg-green-50 px-8 py-4 rounded-full text-lg font-bold shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+            <span>Unirme al Grupo</span>
+          </a>
         </div>
       </div>
     </div>
@@ -248,15 +352,15 @@
   <div class="absolute inset-0 bg-black opacity-10"></div>
   
   <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
-    <h3 class="text-3xl font-bold mb-4">⚡ Acceso Beta Limitado</h3>
+    <h3 class="text-3xl font-bold mb-4">🚀 Próximo Lanzamiento</h3>
     <p class="text-xl mb-6 text-blue-100">
-      Solo <strong class="text-white">100 contadores</strong> tendrán acceso anticipado. 
-      Precio beta: <strong class="text-white text-2xl">GRATIS</strong> por 3 meses.
+      Los primeros <strong class="text-white">500 contadores</strong> en la lista de espera tendrán 
+      <strong class="text-white">acceso prioritario</strong> y beneficios especiales.
     </p>
-    <div class="flex justify-center items-center space-x-4" x-data="{ spots: 23 }">
+    <div class="flex justify-center items-center space-x-4" x-data="{ spots: 342 }">
       <div class="bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full border border-white border-opacity-30 shadow-lg">
         <span class="font-bold text-xl text-white" x-text="spots"></span> 
-        <span class="font-semibold text-white">cupos disponibles</span>
+        <span class="font-semibold text-white">contadores en lista</span>
       </div>
       <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg"></div>
       <div class="text-sm font-medium text-blue-100 bg-white bg-opacity-10 px-3 py-1 rounded-full">
@@ -271,10 +375,10 @@
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-12">
         <h3 class="text-4xl font-bold mb-4 text-gray-800">
-          Solicita tu acceso anticipado
+          Únete a la Lista de Espera
         </h3>
         <p class="text-xl text-gray-600">
-          Únete a los contadores que ya están automatizando sus conciliaciones
+          Sé el primero en conocer cuando ConciliApp esté disponible
         </p>
       </div>
       
@@ -286,6 +390,7 @@
           <input type="hidden" name="_next" value="https://contaxes.github.io/ConciliApp/templates/gracias.html">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="Nuevo registro en Lista de Espera ConciliApp">
         
         <div class="grid md:grid-cols-2 gap-6">
           <div>
@@ -360,7 +465,7 @@
         <button type="submit" 
                 class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                 x-on:click="submitted = true">
-          🚀 Solicitar Mi Acceso Beta Gratuito
+          📋 Unirme a la Lista de Espera
         </button>
         
         <!-- Términos y Condiciones -->
@@ -368,12 +473,12 @@
           <label class="flex items-start space-x-3 cursor-pointer">
             
             <span class="text-sm text-gray-700 leading-relaxed">
-              Al hacer clic en "Solicitar Mi Acceso Beta Gratuito" acepto los 
+              Al hacer clic en "Unirme a la Lista de Espera" acepto los 
               <a href="templates/tyc.html" target="_blank" 
                  class="text-blue-600 hover:text-blue-800 underline font-medium">
                 Términos y Condiciones
               </a>
-              de ConciliApp. Entiendo que recibiré comunicaciones sobre el producto y actualizaciones importantes.
+              de ConciliApp. Entiendo que recibiré comunicaciones sobre el lanzamiento del producto y actualizaciones importantes.
             </span>
           </label>
         </div>
@@ -396,31 +501,44 @@
             <span class="float-right" x-text="openFaq === 1 ? '−' : '+'"></span>
           </button>
           <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-600">
-            De momento funciona con Bancolombia y Davivienda, pero nos encontramos trabajando para que se integre con la mayoría de bancos. 
-            Si tu banco no está soportado, escribemos y lo agregamos en 48 horas.
+            Actualmente funciona directamente con PDFs de Bancolombia y Davivienda, además de archivos Excel de ambos bancos. 
+            Para otros bancos, incluimos una plantilla universal de Excel donde puedes cargar los movimientos y funcionar con cualquier banco.
           </div>
         </div>
         
         <div class="bg-white rounded-lg shadow-md">
           <button class="w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors"
                   x-on:click="openFaq = openFaq === 2 ? null : 2">
-            ¿Qué pasa con mis datos confidenciales?
+            ¿Con qué sistemas contables es compatible?
             <span class="float-right" x-text="openFaq === 2 ? '−' : '+'"></span>
           </button>
           <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-600">
-            Tus datos se procesan de forma segura y se eliminan automáticamente después de descargar tu reporte. 
-            Cumplimos con estándares de seguridad.
+            ConciliApp funciona directamente con Siigo Nube, Alegra y World Office. También incluye una plantilla universal 
+            de Excel para trabajar con cualquier sistema contable que permita exportar datos.
           </div>
         </div>
         
         <div class="bg-white rounded-lg shadow-md">
           <button class="w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors"
                   x-on:click="openFaq = openFaq === 3 ? null : 3">
-            ¿Cuánto tiempo estara gratuita?
+            ¿Qué pasa con mis datos confidenciales?
             <span class="float-right" x-text="openFaq === 3 ? '−' : '+'"></span>
           </button>
           <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-600">
-            La beta de ConciliApp tendra un periodo de duración de dos meses, posteriormente se lanzara públicamente y se incluiran funcionalidades gratuitas limitadas y funcionalidades avanzadas y sin limitaciones de pago. Los usuarios beta tendrán un descuento permanente del 50%.
+            Tus datos se procesan de forma segura y se eliminan automáticamente después de descargar tu reporte. 
+            Cumplimos con estándares de seguridad bancaria y nunca almacenamos información financiera.
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md">
+          <button class="w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition-colors"
+                  x-on:click="openFaq = openFaq === 4 ? null : 4">
+            ¿Cuándo estará disponible ConciliApp?
+            <span class="float-right" x-text="openFaq === 4 ? '−' : '+'"></span>
+          </button>
+          <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-600">
+            Estamos en las fases finales de desarrollo. Los miembros de la lista de espera serán los primeros en conocer 
+            la fecha exacta de lanzamiento y tendrán acceso prioritario a la plataforma.
           </div>
         </div>
       </div>
@@ -508,4 +626,3 @@
 
 </body>
 </html>
-
